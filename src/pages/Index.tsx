@@ -31,6 +31,13 @@ const Index = () => (
     >
       <div className="container mx-auto px-4 text-center">
         <SectionReveal>
+          <img
+            src="/logo.png"
+            alt="Celsão Auto Peças"
+            className="h-16 w-auto object-contain mb-8 mx-auto"
+          />
+        </SectionReveal>
+        <SectionReveal>
           <span className="inline-block px-4 py-1.5 text-gold text-sm font-medium tracking-wide" style={{ border: '1.5px solid hsl(var(--gold))' }}>
             Há mais de 30 anos no mercado
           </span>
@@ -46,12 +53,15 @@ const Index = () => (
           </p>
         </SectionReveal>
         <SectionReveal delay={300}>
-          <Link
-            to="/contato"
-            className="inline-block px-6 py-3 bg-gold text-gold-foreground font-extrabold text-sm uppercase tracking-wide hover:opacity-90 transition-opacity"
+          <a
+            href="https://wa.me/5511932997159?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20uma%20pe%C3%A7a."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 font-extrabold transition-all duration-200 hover:brightness-110 active:scale-[0.97] shadow-lg"
+            style={{ backgroundColor: "#e7c30b", color: "#1a1a1a", borderRadius: 0 }}
           >
             Fale conosco
-          </Link>
+          </a>
         </SectionReveal>
       </div>
     </section>
