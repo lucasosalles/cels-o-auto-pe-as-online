@@ -61,7 +61,7 @@ const Index = () => (
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
         {[
           { Icon: RefreshCw, text: 'Troca em 7 dias' },
-          { Icon: CreditCard, text: 'Parcele em até 12x' },
+          { Icon: CreditCard, text: 'Parcele em até 10x sem juros*' },
           { Icon: ShieldCheck, text: 'Site 100% seguro' },
         ].map(({ Icon, text }) => (
           <div key={text} className="flex items-center justify-center gap-3 py-2">
