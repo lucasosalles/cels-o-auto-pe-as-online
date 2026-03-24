@@ -4,30 +4,31 @@ import { RefreshCw, CreditCard, ShieldCheck, Award, Clock, Headphones, Mail, Pho
 import SectionReveal from '@/components/SectionReveal';
 
 const marcas = [
-  { nome: 'Cofap', dominio: 'cofap.com.br' },
-  { nome: 'Nakata', dominio: 'nakata.com.br' },
-  { nome: 'NGK', dominio: 'ngk.com.br' },
-  { nome: 'Bosch', dominio: 'bosch.com.br' },
-  { nome: 'Magneti Marelli', dominio: 'magnetimarelli.com' },
-  { nome: 'Continental', dominio: 'continental.com' },
-  { nome: 'Frasle', dominio: 'frasle.com' },
-  { nome: 'Tecfil', dominio: 'tecfil.com.br' },
-  { nome: 'Axios', dominio: 'axios.com.br' },
-  { nome: 'Perfect', dominio: 'perfectpecas.com.br' },
-  { nome: 'Viemar', dominio: 'viemar.com.br' },
-  { nome: 'Mte', dominio: 'mte-thomson.com.br' },
-  { nome: 'Valclei', dominio: 'valclei.com.br' },
-  { nome: 'Sampel', dominio: 'sampel.com.br' },
-  { nome: 'DS', dominio: 'dspecas.com.br' },
-  { nome: 'TSA', dominio: 'tsa.com.br' },
-  { nome: 'Hipper Freios', dominio: 'hipperfreios.com.br' },
-  { nome: 'Cobreq', dominio: 'cobreq.com.br' },
-  { nome: 'Controil', dominio: 'controil.com.br' },
-  { nome: 'IKS', dominio: 'iks.com.br' },
-  { nome: 'Fania', dominio: 'fania.com.br' },
-  { nome: 'Indisa', dominio: 'indisa.com.br' },
-  { nome: 'Roltens', dominio: 'roltens.com.br' },
-  { nome: 'IRB', dominio: 'irb.com.br' },
+  { nome: 'Cofap', arquivo: 'cofap.png' },
+  { nome: 'Nakata', arquivo: 'nakata.png' },
+  { nome: 'NGK', arquivo: 'ngk.png' },
+  { nome: 'Bosch', arquivo: 'bosch.png' },
+  { nome: 'Magneti Marelli', arquivo: 'magneti marelli.png' },
+  { nome: 'Continental', arquivo: 'continental.png' },
+  { nome: 'Frasle', arquivo: 'frasle.png' },
+  { nome: 'Tecfil', arquivo: 'tecfil.png' },
+  { nome: 'Axios', arquivo: 'axios.png' },
+  { nome: 'Perfect', arquivo: 'perfect.png' },
+  { nome: 'Viemar', arquivo: 'viemar.png' },
+  { nome: 'Mte', arquivo: 'mte.png' },
+  { nome: 'Valclei', arquivo: 'valclei.png' },
+  { nome: 'Sampel', arquivo: 'sampel.png' },
+  { nome: 'DS', arquivo: 'ds.png' },
+  { nome: 'TSA', arquivo: 'tsa.png' },
+  { nome: 'Hipper Freios', arquivo: 'hipper freios.png' },
+  { nome: 'Cobreq', arquivo: 'cobreq.png' },
+  { nome: 'IKS', arquivo: 'iks.png' },
+  { nome: 'Fania', arquivo: 'fania.png' },
+  { nome: 'Indisa', arquivo: 'indisa.png' },
+  { nome: 'Roltens', arquivo: 'roltens.png' },
+  { nome: 'IRB', arquivo: 'irb.png' },
+  { nome: 'Sabo', arquivo: 'sabo.png' },
+  { nome: 'Taranto', arquivo: 'taranto.png' },
 ];
 
 const stores = [
@@ -135,17 +136,17 @@ const Index = () => (
           {[...marcas, ...marcas].map((marca, i) => (
             <div
               key={`${marca.nome}-${i}`}
-              className="flex items-center justify-center flex-shrink-0 px-3"
+              className="flex items-center justify-center flex-shrink-0"
               style={{
-                width: '140px',
-                height: '80px',
+                width: '150px',
+                height: '90px',
                 backgroundColor: '#ffffff',
                 border: '1px solid #e7c30b',
-                padding: '12px',
+                padding: '14px',
               }}
             >
               <img
-                src={`https://logo.clearbit.com/${marca.dominio}`}
+                src={`/logos/${encodeURIComponent(marca.arquivo)}`}
                 alt={marca.nome}
                 className="max-h-full max-w-full object-contain"
                 onError={(e) => {
