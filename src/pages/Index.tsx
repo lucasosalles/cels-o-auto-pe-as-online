@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import { RefreshCw, CreditCard, ShieldCheck, Award, Clock, Headphones, Mail, Phone, MapPin } from 'lucide-react';
 import SectionReveal from '@/components/SectionReveal';
 
-const products = [
-  { name: 'Par Lanterna Dianteira Âmbar Kombi 1976 a 2014', price: 'R$ 110,00', badge: 'Lançamento' },
-  { name: 'Par Lente Lanterna Dianteira Cristal Kombi 1967 a 1975', price: 'R$ 59,90' },
-  { name: 'Par Aro Moldura Farol Preto Fusca/Kombi', price: 'R$ 28,00' },
-  { name: 'Par Lente Lanterna Traseira Rubi Pampa/F100 1982-1986', price: 'R$ 55,90' },
-  { name: 'Par Lanterna Pisca Dianteira Âmbar Opala Caravan 1975-1979', price: 'R$ 349,00', badge: 'Exclusivo' },
+const marcas = [
+  'Cofap', 'Nakata', 'Axios', 'Perfect', 'Viemar', 'Mte',
+  'Valclei', 'NGK', 'Bosch', 'Magneti Marelli', 'Sampel', 'DS',
+  'TSA', 'Tecfil', 'Continental', 'Hipper Freios', 'Frasle',
+  'Cobreq', 'Controil', 'IKS', 'Fania', 'Indisa', 'Roltens', 'IRB',
 ];
 
 const stores = [
@@ -108,20 +107,19 @@ const Index = () => (
         <SectionReveal>
           <h2 className="text-3xl font-extrabold text-center text-foreground mb-10">Nossos Parceiros</h2>
         </SectionReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {products.map((p, i) => (
-            <SectionReveal key={p.name} delay={i * 80}>
-              <div className="bg-background p-5 border border-border flex flex-col h-full">
-                <div className="h-32 bg-muted flex items-center justify-center mb-4">
-                  <span className="text-muted-foreground text-xs">Imagem</span>
-                </div>
-                {p.badge && (
-                  <span className="inline-block self-start mb-2 px-2 py-0.5 bg-gold text-gold-foreground text-xs font-bold uppercase">
-                    {p.badge}
-                  </span>
-                )}
-                <h3 className="text-sm font-semibold text-foreground mb-2 flex-1">{p.name}</h3>
-                <p className="text-lg font-extrabold text-primary">{p.price}</p>
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
+          {marcas.map((marca, i) => (
+            <SectionReveal key={marca} delay={i * 50}>
+              <div
+                className="flex items-center justify-center px-3 py-5 text-center"
+                style={{
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #e7c30b',
+                }}
+              >
+                <span className="text-foreground font-bold text-xs uppercase tracking-wide leading-tight">
+                  {marca}
+                </span>
               </div>
             </SectionReveal>
           ))}
