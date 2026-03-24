@@ -16,7 +16,19 @@ const Header = () => {
     <header className="bg-secondary border-b-2 border-gold sticky top-0 z-40">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <Link to="/" className="flex items-center gap-2 w-32">
-          <img src="/logo.png" alt="Celsão Auto Peças" className="h-12 w-auto object-contain" />
+          <img
+            src="/logo.png"
+            alt="Celsão Auto Peças"
+            className="h-12 w-auto object-contain"
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              img.style.display = 'none';
+              const span = document.createElement('span');
+              span.textContent = 'Celsão';
+              span.style.cssText = 'color:#e7c30b;font-weight:900;font-size:1.1rem;letter-spacing:-0.5px;';
+              img.parentNode?.insertBefore(span, img.nextSibling);
+            }}
+          />
         </Link>
 
         <nav className="hidden md:flex flex-1 justify-center items-center gap-8">

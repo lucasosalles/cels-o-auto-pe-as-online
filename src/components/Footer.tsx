@@ -10,6 +10,14 @@ const Footer = () => (
           alt="Celsão Auto Peças"
           className="h-12 w-auto object-contain mb-4"
           style={{ filter: 'brightness(0) invert(1)' }}
+          onError={(e) => {
+            const img = e.target as HTMLImageElement;
+            img.style.display = 'none';
+            const span = document.createElement('span');
+            span.textContent = 'Celsão Auto Peças';
+            span.style.cssText = 'color:#e7c30b;font-weight:900;font-size:1rem;display:block;margin-bottom:1rem;';
+            img.parentNode?.insertBefore(span, img.nextSibling);
+          }}
         />
         <p className="text-white/60 text-sm leading-relaxed">
           Há mais de 30 anos oferecendo peças automotivas de qualidade com atendimento especializado.

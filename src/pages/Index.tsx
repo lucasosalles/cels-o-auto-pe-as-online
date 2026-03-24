@@ -33,8 +33,9 @@ const Index = () => (
         <SectionReveal>
           <img
             src="/logo.png"
-            alt="Celsão Auto Peças"
+            alt=""
             className="h-16 w-auto object-contain mb-8 mx-auto"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
           />
         </SectionReveal>
         <SectionReveal>
