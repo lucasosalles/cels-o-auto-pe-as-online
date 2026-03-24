@@ -4,10 +4,30 @@ import { RefreshCw, CreditCard, ShieldCheck, Award, Clock, Headphones, Mail, Pho
 import SectionReveal from '@/components/SectionReveal';
 
 const marcas = [
-  'Cofap', 'Nakata', 'Axios', 'Perfect', 'Viemar', 'Mte',
-  'Valclei', 'NGK', 'Bosch', 'Magneti Marelli', 'Sampel', 'DS',
-  'TSA', 'Tecfil', 'Continental', 'Hipper Freios', 'Frasle',
-  'Cobreq', 'Controil', 'IKS', 'Fania', 'Indisa', 'Roltens', 'IRB',
+  { nome: 'Cofap', dominio: 'cofap.com.br' },
+  { nome: 'Nakata', dominio: 'nakata.com.br' },
+  { nome: 'NGK', dominio: 'ngk.com.br' },
+  { nome: 'Bosch', dominio: 'bosch.com.br' },
+  { nome: 'Magneti Marelli', dominio: 'magnetimarelli.com' },
+  { nome: 'Continental', dominio: 'continental.com' },
+  { nome: 'Frasle', dominio: 'frasle.com' },
+  { nome: 'Tecfil', dominio: 'tecfil.com.br' },
+  { nome: 'Axios', dominio: 'axios.com.br' },
+  { nome: 'Perfect', dominio: 'perfectpecas.com.br' },
+  { nome: 'Viemar', dominio: 'viemar.com.br' },
+  { nome: 'Mte', dominio: 'mte-thomson.com.br' },
+  { nome: 'Valclei', dominio: 'valclei.com.br' },
+  { nome: 'Sampel', dominio: 'sampel.com.br' },
+  { nome: 'DS', dominio: 'dspecas.com.br' },
+  { nome: 'TSA', dominio: 'tsa.com.br' },
+  { nome: 'Hipper Freios', dominio: 'hipperfreios.com.br' },
+  { nome: 'Cobreq', dominio: 'cobreq.com.br' },
+  { nome: 'Controil', dominio: 'controil.com.br' },
+  { nome: 'IKS', dominio: 'iks.com.br' },
+  { nome: 'Fania', dominio: 'fania.com.br' },
+  { nome: 'Indisa', dominio: 'indisa.com.br' },
+  { nome: 'Roltens', dominio: 'roltens.com.br' },
+  { nome: 'IRB', dominio: 'irb.com.br' },
 ];
 
 const stores = [
@@ -112,60 +132,10 @@ const Index = () => (
 
       <div className="relative w-full overflow-hidden">
         <div className="animate-scroll-marcas gap-4 px-4">
-          {[
-            { nome: 'Cofap', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Cofap_logo.svg/200px-Cofap_logo.svg.png' },
-            { nome: 'Nakata', logo: 'https://www.nakata.com.br/img/logo-nakata.png' },
-            { nome: 'NGK', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/NGK_logo.svg/200px-NGK_logo.svg.png' },
-            { nome: 'Bosch', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bosch-logo.svg/200px-Bosch-logo.svg.png' },
-            { nome: 'Magneti Marelli', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Magneti_Marelli_logo.svg/200px-Magneti_Marelli_logo.svg.png' },
-            { nome: 'Continental', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Continental_AG_logo.svg/200px-Continental_AG_logo.svg.png' },
-            { nome: 'Frasle', logo: 'https://www.frasle.com/wp-content/uploads/2021/03/logo-frasle.png' },
-            { nome: 'Tecfil', logo: 'https://www.tecfil.com.br/img/logo.png' },
-            { nome: 'Axios', logo: '' },
-            { nome: 'Perfect', logo: '' },
-            { nome: 'Viemar', logo: '' },
-            { nome: 'Mte', logo: '' },
-            { nome: 'Valclei', logo: '' },
-            { nome: 'Sampel', logo: '' },
-            { nome: 'DS', logo: '' },
-            { nome: 'TSA', logo: '' },
-            { nome: 'Hipper Freios', logo: '' },
-            { nome: 'Cobreq', logo: '' },
-            { nome: 'Controil', logo: '' },
-            { nome: 'IKS', logo: '' },
-            { nome: 'Fania', logo: '' },
-            { nome: 'Indisa', logo: '' },
-            { nome: 'Roltens', logo: '' },
-            { nome: 'IRB', logo: '' },
-            // Duplicado para loop infinito contínuo
-            { nome: 'Cofap2', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Cofap_logo.svg/200px-Cofap_logo.svg.png' },
-            { nome: 'Nakata2', logo: 'https://www.nakata.com.br/img/logo-nakata.png' },
-            { nome: 'NGK2', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/NGK_logo.svg/200px-NGK_logo.svg.png' },
-            { nome: 'Bosch2', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bosch-logo.svg/200px-Bosch-logo.svg.png' },
-            { nome: 'Magneti Marelli2', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Magneti_Marelli_logo.svg/200px-Magneti_Marelli_logo.svg.png' },
-            { nome: 'Continental2', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Continental_AG_logo.svg/200px-Continental_AG_logo.svg.png' },
-            { nome: 'Frasle2', logo: 'https://www.frasle.com/wp-content/uploads/2021/03/logo-frasle.png' },
-            { nome: 'Tecfil2', logo: 'https://www.tecfil.com.br/img/logo.png' },
-            { nome: 'Axios2', logo: '' },
-            { nome: 'Perfect2', logo: '' },
-            { nome: 'Viemar2', logo: '' },
-            { nome: 'Mte2', logo: '' },
-            { nome: 'Valclei2', logo: '' },
-            { nome: 'Sampel2', logo: '' },
-            { nome: 'DS2', logo: '' },
-            { nome: 'TSA2', logo: '' },
-            { nome: 'Hipper Freios2', logo: '' },
-            { nome: 'Cobreq2', logo: '' },
-            { nome: 'Controil2', logo: '' },
-            { nome: 'IKS2', logo: '' },
-            { nome: 'Fania2', logo: '' },
-            { nome: 'Indisa2', logo: '' },
-            { nome: 'Roltens2', logo: '' },
-            { nome: 'IRB2', logo: '' },
-          ].map((marca) => (
+          {[...marcas, ...marcas].map((marca, i) => (
             <div
-              key={marca.nome}
-              className="flex items-center justify-center flex-shrink-0"
+              key={`${marca.nome}-${i}`}
+              className="flex items-center justify-center flex-shrink-0 px-3"
               style={{
                 width: '140px',
                 height: '80px',
@@ -174,25 +144,19 @@ const Index = () => (
                 padding: '12px',
               }}
             >
-              {marca.logo ? (
-                <img
-                  src={marca.logo}
-                  alt={marca.nome.replace(/\d+$/, '')}
-                  className="max-h-full max-w-full object-contain"
-                  onError={(e) => {
-                    const img = e.target as HTMLImageElement;
-                    img.style.display = 'none';
-                    const span = document.createElement('span');
-                    span.textContent = marca.nome.replace(/\d+$/, '');
-                    span.style.cssText = 'font-weight:700;font-size:11px;text-transform:uppercase;color:#1a2840;text-align:center;';
-                    img.parentNode?.appendChild(span);
-                  }}
-                />
-              ) : (
-                <span style={{ fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', color: '#1a2840', textAlign: 'center' }}>
-                  {marca.nome.replace(/\d+$/, '')}
-                </span>
-              )}
+              <img
+                src={`https://logo.clearbit.com/${marca.dominio}`}
+                alt={marca.nome}
+                className="max-h-full max-w-full object-contain"
+                onError={(e) => {
+                  const img = e.target as HTMLImageElement;
+                  img.style.display = 'none';
+                  const span = document.createElement('span');
+                  span.textContent = marca.nome;
+                  span.style.cssText = 'font-weight:700;font-size:11px;text-transform:uppercase;color:#1a2840;text-align:center;line-height:1.3;';
+                  img.parentNode?.appendChild(span);
+                }}
+              />
             </div>
           ))}
         </div>
