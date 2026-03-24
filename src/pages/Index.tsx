@@ -102,26 +102,98 @@ const Index = () => (
     </section>
 
     {/* Nossos Parceiros */}
-    <section className="py-16 bg-muted">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-muted overflow-hidden">
+      <div className="container mx-auto px-4 mb-8">
         <SectionReveal>
-          <h2 className="text-3xl font-extrabold text-center text-foreground mb-10">Nossos Parceiros</h2>
+          <h2 className="text-3xl font-extrabold text-center text-foreground mb-2">Nossos Parceiros</h2>
+          <p className="text-center text-muted-foreground text-sm">Trabalhamos com as principais marcas do mercado automotivo</p>
         </SectionReveal>
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
-          {marcas.map((marca, i) => (
-            <SectionReveal key={marca} delay={i * 50}>
-              <div
-                className="flex items-center justify-center px-3 py-5 text-center"
-                style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e7c30b',
-                }}
-              >
-                <span className="text-foreground font-bold text-xs uppercase tracking-wide leading-tight">
-                  {marca}
+      </div>
+
+      <div className="relative w-full overflow-hidden">
+        <div className="animate-scroll-marcas gap-4 px-4">
+          {[
+            { nome: 'Cofap', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Cofap_logo.svg/200px-Cofap_logo.svg.png' },
+            { nome: 'Nakata', logo: 'https://www.nakata.com.br/img/logo-nakata.png' },
+            { nome: 'NGK', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/NGK_logo.svg/200px-NGK_logo.svg.png' },
+            { nome: 'Bosch', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bosch-logo.svg/200px-Bosch-logo.svg.png' },
+            { nome: 'Magneti Marelli', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Magneti_Marelli_logo.svg/200px-Magneti_Marelli_logo.svg.png' },
+            { nome: 'Continental', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Continental_AG_logo.svg/200px-Continental_AG_logo.svg.png' },
+            { nome: 'Frasle', logo: 'https://www.frasle.com/wp-content/uploads/2021/03/logo-frasle.png' },
+            { nome: 'Tecfil', logo: 'https://www.tecfil.com.br/img/logo.png' },
+            { nome: 'Axios', logo: '' },
+            { nome: 'Perfect', logo: '' },
+            { nome: 'Viemar', logo: '' },
+            { nome: 'Mte', logo: '' },
+            { nome: 'Valclei', logo: '' },
+            { nome: 'Sampel', logo: '' },
+            { nome: 'DS', logo: '' },
+            { nome: 'TSA', logo: '' },
+            { nome: 'Hipper Freios', logo: '' },
+            { nome: 'Cobreq', logo: '' },
+            { nome: 'Controil', logo: '' },
+            { nome: 'IKS', logo: '' },
+            { nome: 'Fania', logo: '' },
+            { nome: 'Indisa', logo: '' },
+            { nome: 'Roltens', logo: '' },
+            { nome: 'IRB', logo: '' },
+            // Duplicado para loop infinito contínuo
+            { nome: 'Cofap2', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Cofap_logo.svg/200px-Cofap_logo.svg.png' },
+            { nome: 'Nakata2', logo: 'https://www.nakata.com.br/img/logo-nakata.png' },
+            { nome: 'NGK2', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/NGK_logo.svg/200px-NGK_logo.svg.png' },
+            { nome: 'Bosch2', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bosch-logo.svg/200px-Bosch-logo.svg.png' },
+            { nome: 'Magneti Marelli2', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Magneti_Marelli_logo.svg/200px-Magneti_Marelli_logo.svg.png' },
+            { nome: 'Continental2', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Continental_AG_logo.svg/200px-Continental_AG_logo.svg.png' },
+            { nome: 'Frasle2', logo: 'https://www.frasle.com/wp-content/uploads/2021/03/logo-frasle.png' },
+            { nome: 'Tecfil2', logo: 'https://www.tecfil.com.br/img/logo.png' },
+            { nome: 'Axios2', logo: '' },
+            { nome: 'Perfect2', logo: '' },
+            { nome: 'Viemar2', logo: '' },
+            { nome: 'Mte2', logo: '' },
+            { nome: 'Valclei2', logo: '' },
+            { nome: 'Sampel2', logo: '' },
+            { nome: 'DS2', logo: '' },
+            { nome: 'TSA2', logo: '' },
+            { nome: 'Hipper Freios2', logo: '' },
+            { nome: 'Cobreq2', logo: '' },
+            { nome: 'Controil2', logo: '' },
+            { nome: 'IKS2', logo: '' },
+            { nome: 'Fania2', logo: '' },
+            { nome: 'Indisa2', logo: '' },
+            { nome: 'Roltens2', logo: '' },
+            { nome: 'IRB2', logo: '' },
+          ].map((marca) => (
+            <div
+              key={marca.nome}
+              className="flex items-center justify-center flex-shrink-0"
+              style={{
+                width: '140px',
+                height: '80px',
+                backgroundColor: '#ffffff',
+                border: '1px solid #e7c30b',
+                padding: '12px',
+              }}
+            >
+              {marca.logo ? (
+                <img
+                  src={marca.logo}
+                  alt={marca.nome.replace(/\d+$/, '')}
+                  className="max-h-full max-w-full object-contain"
+                  onError={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    img.style.display = 'none';
+                    const span = document.createElement('span');
+                    span.textContent = marca.nome.replace(/\d+$/, '');
+                    span.style.cssText = 'font-weight:700;font-size:11px;text-transform:uppercase;color:#1a2840;text-align:center;';
+                    img.parentNode?.appendChild(span);
+                  }}
+                />
+              ) : (
+                <span style={{ fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', color: '#1a2840', textAlign: 'center' }}>
+                  {marca.nome.replace(/\d+$/, '')}
                 </span>
-              </div>
-            </SectionReveal>
+              )}
+            </div>
           ))}
         </div>
       </div>

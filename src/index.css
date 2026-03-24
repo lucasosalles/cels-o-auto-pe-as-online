@@ -65,3 +65,16 @@
 .animate-reveal-up {
   animation: reveal-up 0.7s ease-out forwards;
 }
+
+@keyframes scroll-marcas {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-marcas {
+  animation: scroll-marcas 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+.animate-scroll-marcas:hover {
+  animation-play-state: paused;
+}
