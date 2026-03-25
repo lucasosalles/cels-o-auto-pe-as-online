@@ -71,7 +71,7 @@
   100% { transform: translateX(-50%); }
 }
 .animate-scroll-marcas {
-  animation: scroll-marcas 60s linear infinite;
+  animation: scroll-marcas 40s linear infinite;
   display: flex;
   width: max-content;
 }

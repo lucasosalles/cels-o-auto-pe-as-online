@@ -17,7 +17,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <Link to="/" className="flex items-center gap-2 w-32">
           <img
-            src="/logo.png"
+            src="/Logotipo sem fundo.png"
             alt="Celsão Auto Peças"
             className="h-12 w-auto object-contain"
             onError={(e) => {

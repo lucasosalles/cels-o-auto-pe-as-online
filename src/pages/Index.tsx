@@ -123,7 +123,7 @@ const Index = () => (
     </section>
 
     {/* Nossos Parceiros */}
-    <section className="py-16 bg-muted overflow-hidden">
+    <section className="py-16 overflow-hidden" style={{ backgroundColor: '#f8f9fa' }}>
       <div className="container mx-auto px-4 mb-8">
         <SectionReveal>
           <h2 className="text-3xl font-extrabold text-center text-foreground mb-2">Nossos Parceiros</h2>
@@ -132,30 +132,19 @@ const Index = () => (
       </div>
 
       <div className="relative w-full overflow-hidden">
-        <div className="animate-scroll-marcas gap-4 px-4">
+        <div className="animate-scroll-marcas gap-8 px-4">
           {[...marcas, ...marcas].map((marca, i) => (
             <div
               key={`${marca.nome}-${i}`}
               className="flex items-center justify-center flex-shrink-0"
-              style={{
-                width: '150px',
-                height: '90px',
-                backgroundColor: '#ffffff',
-                border: '1px solid #e7c30b',
-                padding: '14px',
-              }}
+              style={{ height: '60px' }}
             >
               <img
                 src={`/logos/${encodeURIComponent(marca.arquivo)}`}
                 alt={marca.nome}
-                className="max-h-full max-w-full object-contain"
+                className="h-[60px] w-auto object-contain"
                 onError={(e) => {
-                  const img = e.target as HTMLImageElement;
-                  img.style.display = 'none';
-                  const span = document.createElement('span');
-                  span.textContent = marca.nome;
-                  span.style.cssText = 'font-weight:700;font-size:11px;text-transform:uppercase;color:#1a2840;text-align:center;line-height:1.3;';
-                  img.parentNode?.appendChild(span);
+                  (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
             </div>
